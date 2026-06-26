@@ -13,28 +13,28 @@
     <title>Landing Page</title>
   </head>
   <body>
+    <header class="header">
+      <a href="index.html" class="logo">
+        <span class="logo__text">PSL Studio</span>
+      </a>
+
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+          </li>
+          <li><a href="index.html#feedback" class="nav-link">Feedback</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--HERO SECTION-->
+
     <main class="studio-landing-page">
-      <header class="header">
-        <a href="index.html" class="logo">
-          <span class="logo__text">PSL Studio</span>
-        </a>
-
-        <nav class="navigation">
-          <ul class="nav-list">
-            <li><a href="index.html#about" class="nav-link">About</a></li>
-            <li>
-              <a href="index.html#projects" class="nav-link">Projects</a>
-            </li>
-            <li><a href="index.html#feedback" class="nav-link">Feedback</a></li>
-            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <!--HERO SECTION-->
-
       <section class="hero">
-        <div class="hero__contianer">
+        <div class="hero__container">
           <div class="hero__brand">
             <p class="hero__header">Web design & development</p>
             <h1 class="hero__title">
@@ -49,7 +49,7 @@
               Small studio, considered work. We build thoughtful websites for
               brands that care about how they show up online.
             </p>
-            <button class="projects-link">See the work</button>
+            <a href="#projects" class="projects-link">See the work</a>
           </div>
 
           <hr class="hero__divider" />
@@ -108,6 +108,7 @@
 
         <div class="project__list">
           <ol class="client-list">
+            <!--Project 01-->
             <li class="project-item">
               <button
                 class="project-trigger-btn"
@@ -127,12 +128,11 @@
                     src="images/"
                     class="project__image"
                     alt="ceramics studio"
-                    width="100"
                   />
                   <div class="project-details">
                     <p class="project-description">
                       A complete digital presence for a Kraainem-based ceramics
-                      studio. Identity system, glalry, and online shop
+                      studio. Identity system, gallery, and online shop
                     </p>
                     <div class="tags">
                       <span>Branding</span>
@@ -143,7 +143,7 @@
                 </div>
               </div>
             </li>
-
+            <!--Project 02-->
             <li class="project-item">
               <button
                 class="project-trigger-btn"
@@ -158,12 +158,7 @@
               </button>
               <div class="project-content" id="content-02" aria-hidden="true">
                 <div class="content-inner">
-                  <img
-                    src="images/"
-                    class="project__image"
-                    alt="food blog"
-                    width="100"
-                  />
+                  <img src="images/" class="project__image" alt="food blog" />
                   <div class="project-details">
                     <p class="project-description">
                       Food blog and recipe subscription.
@@ -179,16 +174,16 @@
             </li>
           </ol>
         </div>
-
+        <!--Availibility status container-->
         <div class="status-container">
           <p class="status">
             <span class="status-light">🟢</span>
             <span class="status-text">AVAILABLE NOW</span>
             Open for new projects - got something in mind?
           </p>
-          <button type="button" class="contact-btn">Get in touch -</button>
+          <a href="#contact" class="contact-btn">Get in touch -</a>
         </div>
-
+        <!--Self initiated subsection-->
         <div class="section__header">
           <p class="section-chapter">SELF-INITIATED</p>
           <h2 class="section-title">Built for the love of it</h2>
@@ -200,6 +195,7 @@
 
         <div class="project__list">
           <ol class="client-list">
+            <!--Project 01-->
             <li class="project-item">
               <button
                 class="project-trigger-btn"
@@ -219,7 +215,6 @@
                     src="images/"
                     class="project__image"
                     alt="ceramics studio"
-                    width="100"
                   />
                   <div class="project-details">
                     <p class="project-description">
@@ -280,36 +275,49 @@
           <p class="section-chapter">02 - FEEDBACK</p>
           <h2 class="section-title">What clients say</h2>
         </div>
+
         <div class="feedback__list">
-          <p class="feedback-client-comment">
-            "Working with PSL Studio felt genuinely different. They listened
-            first, then designed. The result was a site we're actually proud to
-            share."
-          </p>
-          <span class="feedback-client__name">Maja Lindström</span>
-          <span class="feedback-client__details"
-            >Founder, Björk Atelier · 2024</span
-          >
-          <hr />
-          <p class="feedback-client-comment">
-            "Fast, thoughtful, and no fuss. They translated a very vague brief
-            into something that feels exactly like us — and delivered ahead of
-            schedule."
-          </p>
-          <span class="feedback-client__name">Erik Haugeb</span>
-          <span class="feedback-client__details"
-            >Director, Norr Supply Co. · 2024</span
-          >
-          <hr />
-          <p class="feedback-client-comment">
-            "The attention to detail was extraordinary. Every interaction, every
-            hover state — it all felt considered. Our clients noticed
-            immediately."
-          </p>
-          <span class="feedback-client__name">Ingrid Lundqvist</span>
-          <span class="feedback-client__details"
-            >Partner, Lundqvist Architects · 2023</span
-          >
+          <blockquote class="feedback-item">
+            <p class="feedback-client-comment">
+              "Working with PSL Studio felt genuinely different. They listened
+              first, then designed. The result was a site we're actually proud
+              to share."
+            </p>
+            <cite class="feedback-client__meta">
+              <span class="feedback-client__name">Maja Lindström</span>
+              <span class="feedback-client__details"
+                >Founder, Björk Atelier · 2024</span
+              ></cite
+            >
+          </blockquote>
+
+          <blockquote class="feedback-item">
+            <p class="feedback-client-comment">
+              "Fast, thoughtful, and no fuss. They translated a very vague brief
+              into something that feels exactly like us — and delivered ahead of
+              schedule."
+            </p>
+            <cite class="feedback-client__meta">
+              <span class="feedback-client__name">Erik Haugeb</span>
+              <span class="feedback-client__details"
+                >Director, Norr Supply Co. · 2024</span
+              >
+            </cite>
+          </blockquote>
+
+          <blockquote class="feedback-item">
+            <p class="feedback-client-comment">
+              "The attention to detail was extraordinary. Every interaction,
+              every hover state — it all felt considered. Our clients noticed
+              immediately."
+            </p>
+            <cite class="feedback-client__meta">
+              <span class="feedback-client__name">Ingrid Lundqvist</span>
+              <span class="feedback-client__details"
+                >Partner, Lundqvist Architects · 2023</span
+              ></cite
+            >
+          </blockquote>
         </div>
       </section>
 
@@ -330,19 +338,23 @@
         </div>
 
         <form class="contact-form" id="contact-form">
-          <div class="user-details">
-            <p class="input__title">NAME</p>
+          <div class="form-group">
+            <label for="form-name" class="input__title">NAME</label>
             <input type="text" name="name" placeholder="Your name" required />
-            <hr />
-            <p class="input__title">EMAIL</p>
+          </div>
+
+          <div class="form-group">
+            <label for="form-email" class="input__title">EMAIL</label>
             <input
               type="email"
               name="email"
               placeholder="your@email.com"
               required
             />
-            <hr />
-            <p class="input__title">MESSAGE</p>
+          </div>
+
+          <div class="form-group">
+            <label class="input__title">MESSAGE</label>
             <textarea
               name="message"
               placeholder="Tell us about your project..."
@@ -350,88 +362,87 @@
               required
             ></textarea>
           </div>
-          <hr />
           <button type="submit" class="btn-submit">Send Message -</button>
         </form>
       </section>
+    </main>
 
-      <!--FOOTER SECTION-->
+    <!--FOOTER SECTION-->
 
-      <footer class="footer">
-        <div class="footer__container">
-          <div class="footer__top-row">
-            <nav class="footer__nav">
-              <a href="index.html">Home</a>
-              <a href="index.html#about">About</a>
-              <a href="index.html#wprojects">Projects</a>
-              <a href="index.html#feedback">Feedback</a>
-            </nav>
-            <div class="footer__socials">
-              <a
-                href="#"
-                target="_blank"
-                aria-label="Instagram"
-                class="social-icons"
-              >
-                <img
-                  src="images/instagram-logo.svg"
-                  alt="IG logo"
-                  width="20"
-                  class="social-logo-svg"
-                />
-              </a>
-              <a
-                href="https://github.com/mmsnielsen"
-                target="_blank"
-                aria-label="GitHub logo"
-                class="social-icons"
-              >
-                <img
-                  src="images/github-logo.svg"
-                  alt="GitHub logo"
-                  width="20"
-                  class="github-logo-svg"
-                />
-              </a>
-              <a
-                href="index.html#contact"
-                aria-label="Contact email logo"
-                class="social-icons"
-              >
-                <img
-                  src="images/email-logo.svg"
-                  alt="Email logo"
-                  width="20"
-                  class="social-logo-svg"
-                />
-              </a>
-            </div>
-          </div>
-
-          <hr class="footer__divider" />
-
-          <div class="footer__bottom-row">
-            <div class="footer__brand">
-              <a href="#top" class="footer-logo-link">
-                <span class="footer__logo">PSL Studio</span>
-              </a>
-            </div>
-            <p class="footer__location">
-              BRU · CPH ·
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top-row">
+          <nav class="footer__nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#feedback">Feedback</a>
+          </nav>
+          <div class="footer__socials">
+            <a
+              href="#"
+              target="_blank"
+              aria-label="Instagram"
+              class="social-icons"
+            >
               <img
-                src="images/globe-icon.svg"
-                alt="Global Icon"
+                src="images/instagram-logo.svg"
+                alt="IG logo"
                 width="20"
-                class="footer__icon"
+                class="social-logo-svg"
               />
-            </p>
-            <p class="footer__copyright">
-              © 2026 PSL Studio. All rights reserved.
-            </p>
+            </a>
+            <a
+              href="https://github.com/mmsnielsen"
+              target="_blank"
+              aria-label="GitHub logo"
+              class="social-icons"
+            >
+              <img
+                src="images/github-logo.svg"
+                alt="GitHub logo"
+                width="20"
+                class="github-logo-svg"
+              />
+            </a>
+            <a
+              href="index.html#contact"
+              aria-label="Contact email logo"
+              class="social-icons"
+            >
+              <img
+                src="images/email-logo.svg"
+                alt="Email logo"
+                width="20"
+                class="social-logo-svg"
+              />
+            </a>
           </div>
         </div>
-      </footer>
-    </main>
+
+        <hr class="footer__divider" />
+
+        <div class="footer__bottom-row">
+          <div class="footer__brand">
+            <a href="#top" class="footer-logo-link">
+              <span class="footer__logo">PSL Studio</span>
+            </a>
+          </div>
+          <p class="footer__location">
+            BRU · CPH ·
+            <img
+              src="images/globe-icon.svg"
+              alt="Global Icon"
+              width="20"
+              class="footer__icon"
+            />
+          </p>
+          <p class="footer__copyright">
+            © 2026 PSL Studio. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!--SENT MSG POP UP-->
 
