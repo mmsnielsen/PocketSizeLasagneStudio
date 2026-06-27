@@ -8,4 +8,212 @@
 
 #aec3b0
 
-#eff6e0*/
+#eff6e0
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: DM Mono;
+  background-color: #eff6e0;
+  color: #598392;
+}
+
+/* HEADER */
+
+.header {
+  align-items: center;
+  background-color: #eff6e0;
+  display: flex;
+  justify-content: space-between; /* Pushes logo left, navigation right */
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: /* smooth transition for when the boarder/padding changes */
+    border-bottom 0.2s ease,
+    padding 0.2s ease;
+}
+
+.header--scrolled {
+  /* this is for JS when scrolling down */
+  border-bottom: 1px solid rgba(18, 69, 89, 0.2);
+  padding: 16px 0;
+  transition: bottom-border 0.5s ease;
+}
+
+.header .logo {
+  margin-left: 10%;
+}
+
+.header .navigation {
+  margin-right: 10%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #124559;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* NAVIGATION */
+
+.nav-list {
+  display: flex;
+  font-family: DM Sans;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #124559;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* makes a slide in underline when hovered over */
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #01161e;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-link:hover {
+  color: #01161e;
+}
+
+/* HERO SECTION */
+
+.hero {
+  background-color: #eff6e0;
+  padding: 80px 10% 40px 10%;
+}
+
+.hero__container {
+  display: grid;
+  column-gap: 64px;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 30px;
+  width: 100%;
+}
+
+.header__brand {
+  grid-column: 1;
+}
+
+.hero__header {
+  color: #598392;
+  font-family:
+    DM mono,
+    monospace;
+  font-size: 12px;
+  letter-spacing: 0.2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  color: #01161e;
+  font-family: Fraunces, serif;
+  font-size: 81px;
+  font-weight: 300;
+  line-height: 0.9;
+  text-transform: lowercase;
+}
+
+.hero__subtitle {
+  color: #598392;
+  font-family: Fraunces, serif;
+}
+
+.hero__text {
+  align-self: flex-end;
+  grid-column: 2;
+  margin-bottom: 8px;
+  margin-left: auto;
+  max-width: 420px;
+}
+
+.hero__intro {
+  color: #598392;
+  font-family:
+    DM Sans,
+    sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.projects-link {
+  align-items: center;
+  color: #01161e;
+  cursor: default;
+  display: inline-flex;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.projects-link::before {
+  color: #01161e;
+  content: "-";
+  display: inline-block;
+  margin-right: 8px;
+  transform-origin: left center; /* ensures the dash grows outwards to the right */
+  transition:
+    transform 0.3s ease-out,
+    margin-right 0.3s ease-out;
+}
+
+.projects-link:hover::before {
+  margin-right: 16px;
+  transform: scaleX(1.8);
+}
+
+.hero__divider {
+  border: none;
+  border-top: 1px solid rgba(1, 22, 30, 0.2);
+  grid-column: 1 / span 2; /* forces line divider to span across the grid base */
+  margin-top: 60px;
+}
+
+.hero__footer {
+  display: flex;
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  grid-column: 1 / span 2; /* forces footer to stretch across the grid base */
+  justify-content: space-between;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
