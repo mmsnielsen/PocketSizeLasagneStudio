@@ -259,7 +259,7 @@ body {
   line-height: 1.6;
 }
 
-..about__right-column {
+.about__right-column {
   display: flex;
   flex-direction: column;
   grid-column: 3; /* stacks column elements vertically using flexbox */
@@ -301,4 +301,281 @@ body {
   color: #598392;
   content: "-";
   margin-right: 12px;
+}
+
+/* PROJECTS SECTION */
+
+.projects-section {
+  background-color: #e6edda;
+  padding: 120px 10%;
+}
+
+.projects__header {
+  display: grid;
+  column-gap: 64px;
+  grid-template-columns: 0.8fr 3.2fr; /* splits the grid into 2 coloums */
+  row-gap: 16px;
+  width: 100%;
+  margin-bottom: 96px;
+}
+
+.projects-chapter {
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  grid-column: 1; /* targets desired column */
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.projects-title {
+  color: #01161e;
+  font-family: "Fraunces", serif;
+  font-size: 48px;
+  font-weight: 300;
+  grid-column: 2; /* starts in column 2 and spans accros columns 2 & 3 */
+  line-height: 1.15;
+  margin: 0;
+}
+
+.projects-subtitle {
+  grid-column: 2;
+  color: #598392;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  max-width: 500px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.client-list {
+  list-style-type: none;
+  margin: 40px 0 80px 0;
+  padding: 0;
+}
+
+.projects-item {
+  border-top: 1px solid rgba(18, 69, 89, 0.15);
+}
+
+.projects-item:first-child {
+  border-top: none;
+}
+
+.projects-item:last-child {
+  border-bottom: 1px solid rgba(18, 69, 89, 0.15);
+}
+
+.projects-trigger-btn {
+  align-items: start;
+  background: none;
+  border: none;
+  column-gap: 48px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 0.3fr 2fr 1.4fr 0.3fr;
+  margin-top: 12px;
+  padding: 24px 0;
+  text-align: left;
+  width: 100%;
+}
+
+.projects-number {
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+}
+
+.projects-name {
+  color: #01161e;
+  font-family: "Fraunces", serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.projects-name:hover {
+  color: #598392;
+}
+
+.projects-category {
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 14px;
+}
+
+.projects-meta-right {
+  align-items: center;
+  color: #598392;
+  display: flex;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  grid-column: 4;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.projects-year {
+  letter-spacing: 0.05rem;
+}
+
+.projects-icon {
+  color: #124559;
+  font-size: 18px;
+  font-weight: 300;
+  transition: transform 0.3s ease-out;
+}
+
+.projects-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.projects-content[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.content-inner {
+  column-gap: 48px;
+  display: grid;
+  grid-template-columns: 0.3fr 2fr 1.4fr 0.3fr;
+  min-height: 0;
+  padding: 8px 0 48px 0;
+  align-items: start;
+}
+
+.projects__image {
+  display: block;
+  grid-column: 2;
+  height: auto;
+  margin-bottom: 0;
+  min-width: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.projects-details-box {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  grid-column: 3;
+  height: 100%;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.projects-description {
+  color: #598392;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 8px;
+  max-width: 380px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-bottom: 4px;
+}
+
+.tags span {
+  background-color: transparent;
+  color: #124559;
+  border: 1px solid rgba(18, 69, 89, 0.3);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+.status__container {
+  display: grid;
+  /* FIXED: Uses your exact 3-column project layout track system */
+  grid-template-columns: 0.8fr 1.6fr 1.6fr;
+  column-gap: 64px;
+  width: 100%;
+  margin: 100px 0 160px 0;
+}
+
+.status {
+  grid-column: 2 / span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid rgba(18, 69, 89, 0.15);
+  background-color: transparent;
+  padding: 32px 40px;
+  margin: 0;
+}
+
+.status-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status__header {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Pocket of horizontal space between green orb and letters */
+}
+
+.status-light {
+  font-size: 10px; /* Snaps the emoji down to a crisp, subtle size */
+  display: inline-flex;
+}
+
+.status-text {
+  color: #124559;
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+}
+
+.status-pitch {
+  color: #598392;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.contact-btn {
+  align-items: center;
+  color: #01161e;
+  display: inline-flex;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+  white-space: nowrap; /* prevents 'get in touch' from wrapping to the next line */
+}
+
+.status .contact-btn::after {
+  color: #01161e;
+  content: "-";
+  display: inline-block;
+  margin-right: 12px;
+  transform-origin: left center; /* ensures the dash grows outwards to the right */
+  transition:
+    transform 0.3s ease-out,
+    margin-left 0.3s ease-out,
+    color 0.3s ease-out;
+}
+
+.status .contact-btn:hover {
+  color: #598392;
+}
+
+.status .contact-btn:hover::after {
+  color: #598392;
+  margin-left: 16px; /* moves the dash further to the right */
+  transform: scaleX(5); /* makes the dash grow outwards to the right */
 }
