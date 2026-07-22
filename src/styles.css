@@ -333,7 +333,7 @@ body {
   font-family: "Fraunces", serif;
   font-size: 48px;
   font-weight: 300;
-  grid-column: 2; /* starts in column 2 and spans accros columns 2 & 3 */
+  grid-column: 2 / span 3; /* starts in column 2 and spans accros columns 2 & 3 */
   line-height: 1.15;
   margin: 0;
 }
@@ -578,4 +578,81 @@ body {
   color: #598392;
   margin-left: 16px; /* moves the dash further to the right */
   transform: scaleX(5); /* makes the dash grow outwards to the right */
+}
+
+/* FEEDBACK SECTION */
+
+.feedback-section {
+  background-color: #eff6e0;
+  padding: 120px 10%;
+}
+
+.feedback__container {
+  display: grid;
+  column-gap: 64px;
+  grid-template-columns: 0.8fr 2.4fr 0.8fr; /* splits the grid into 3 coloums */
+  row-gap: 20px;
+  width: 100%;
+}
+
+.feedback__header {
+  display: grid;
+  column-gap: 64px;
+  grid-column: 1 / span 3;
+  grid-template-columns: 0.8fr 3.2fr; /* splits the grid into 2 coloums */
+}
+
+.feedback__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  grid-column: 1 / span 3; /* starts in column 1 and spans across columns 1 & 3 */
+  border-bottom: 1px solid rgba(18, 69, 89, 0.15);
+  background-color: rgba(18, 69, 89, 0.15);
+  border-bottom: none;
+}
+
+.feedback-item {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1.2fr;
+  column-gap: 64px;
+  align-items: start;
+  padding: 56px 0;
+  background-color: #eff6e0;
+  border: none;
+}
+
+.feedback-client-comment {
+  color: #01161e;
+  font-family: "fraunces", serif;
+  font-size: 20px;
+  font-weight: 300;
+  grid-column: 2;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.feedback-client__meta {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  font-style: normal; /* overrides the default italic style of the <cite> element */
+  gap: 4px;
+  grid-column: 3;
+  padding-top: 6px;
+}
+
+.feedback-client__name {
+  color: #01161e;
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.feedback-client__details {
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
 }
