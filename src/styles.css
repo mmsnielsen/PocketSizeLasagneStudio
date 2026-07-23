@@ -656,3 +656,327 @@ body {
   letter-spacing: 0.05rem;
   text-transform: uppercase;
 }
+
+/* CONTACT SECTION */
+
+.contact-section {
+  background-color: #e6edda;
+  padding: 120px 10%;
+}
+
+.contact__container {
+  display: grid;
+  column-gap: 64px;
+  grid-template-columns: 0.8fr 1.6fr 1.6fr; /* Main 3-column layout */
+  width: 100%;
+  margin-bottom: 96px;
+}
+
+.contact__header {
+  display: grid;
+  grid-column: 1 / -1; /* Tells the header wrapper to span all 3 main columns */
+  grid-template-columns: subgrid; /* Explicitly inherits the 3 columns from the container */
+  row-gap: 16px;
+}
+
+.contact-chapter {
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  grid-column: 1; /* Sits in column 1 */
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.contact-title {
+  color: #01161e;
+  font-family: "Fraunces", serif;
+  font-size: 48px;
+  font-weight: 300;
+  grid-column: 2 / span 2; /* Starts at column 2 and spans across 2 columns (cols 2 and 3) */
+  line-height: 1.15;
+  margin: 0;
+}
+
+.contact-subtitle {
+  grid-column: 2 / span 2; /* Pushes it back to column 2, underneath the chapter number */
+  grid-row: 2; /* Forces it to the next row below the chapter number */
+  color: #598392;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  max-width: 500px;
+  line-height: 1.5;
+  margin: 0;
+  margin-top: 28px; /* Optional spacing to push it lower like the design image */
+  margin-bottom: 64px; /* Optional spacing to push it lower like the design image */
+}
+
+.contact__info {
+  display: flex;
+  grid-column: 2;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.contact-email {
+  align-self: flex-start;
+  border-bottom: 1px solid rgba(18, 69, 89, 0.15);
+  color: #124659;
+  display: inline-block;
+  font-family: "fraunces", serif;
+  font-size: 32px;
+  font-weight: 300;
+  padding-bottom: 8px;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.contact-email:hover {
+  color: #598392;
+  cursor: pointer;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  grid-column: 2;
+  margin-top: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(18, 69, 89, 0.15);
+  padding-bottom: 8px;
+}
+
+.input__title {
+  color: #598592;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: transparent; /* makes the input field background transparent */
+  border: none; /* removes the default border of the input field */
+  color: #01161e;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  outline: none; /* removes the default outline of the input field */
+  padding: 4px 0;
+  width: 100%;
+}
+
+.contact-form textarea {
+  min-height: 60px;
+  resize: none; /* prevents the user from resizing the textarea */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(89, 131, 146, 0.5);
+  font-weight: 300;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  background-color: #124659;
+  border: none;
+  color: #eff6e0;
+  cursor: pointer;
+  font-family: "DM Mono", monospace;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  margin-top: 24px;
+  text-transform: uppercase;
+
+  /* FIXED: Uniform base padding padding on both sides */
+  padding: 16px 36px;
+
+  /* FIXED: Animates ONLY the right padding padding to grow the box rightward */
+  transition:
+    background-color 0.3s ease,
+    padding-right 0.3s ease;
+}
+
+.btn-submit::after {
+  content: "—"; /* Thick em-dash stays perfectly level during scaling */
+  display: inline-block;
+
+  /* FIXED: Spacing gap between text and dash line */
+  margin-left: 16px;
+  color: #eff6e0;
+
+  /* Keeps the transformation origin locked straight to the left side */
+  transform-origin: left center;
+
+  /* Smoothly transitions both the length stretch and spacing movement */
+  transition:
+    transform 0.3s ease,
+    margin-left 0.3s ease;
+}
+
+/* INTERACTION HOVER TRIGGERS */
+.btn-submit:hover {
+  background-color: #598392;
+  /* FIXED: Left padding stays 36px so text NEVER jumps! Only the right side grows */
+  padding-right: 64px;
+}
+
+.btn-submit:hover::after {
+  /* FIXED: Slides the dash further right along the horizontal axis line */
+  margin-left: 24px;
+  /* FIXED: Horizontally stretches the dash line smoothly */
+  transform: scaleX(2.5);
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: #e6edda;
+  padding: 120px 10% 64px 10%;
+}
+
+.footer__container {
+  display: grid;
+  column-gap: 64px;
+  grid-template-columns: 0.8fr 1.6fr 1.6fr; /* Main 3-column layout */
+  row-gap: 40px;
+  width: 100%;
+}
+
+.footer__top-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / span 3; /* Starts in column 1 and spans across columns 1 & 3 */
+}
+
+.footer__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.footer__nav a {
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.footer__nav a:hover {
+  color: #01161e;
+}
+
+.footer__socials {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.social-icons {
+  align-items: center;
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.social-icons:hover {
+  transform: scaleY(2px);
+}
+
+.social-icons img,
+.github-logo-svg,
+.social-logo-svg {
+  filter: invert(47%) sepia(19%) saturate(684%) hue-rotate(149deg)
+    brightness(94%) contrast(85%);
+  transition: filter 0.2s ease;
+}
+
+.social-icons:hover img,
+.social-icons:hover .github-logo-svg,
+.social-icons:hover .social-logo-svg {
+  filter: invert(6%) sepia(21%) saturate(1478%) hue-rotate(156deg)
+    brightness(92%) contrast(98%);
+}
+
+.footer__divider {
+  border: none;
+  border-top: 1px solid rgba(18, 69, 89, 0.15);
+  grid-column: 1 / span 3; /* Starts in column 1 and spans across columns 1 & 3 */
+  margin: 0;
+}
+
+.footer__bottom-row {
+  align-items: flex-end;
+  column-gap: 64px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr 1.6fr;
+  grid-column: 1 / span 3; /* Starts in column 1 and spans across columns 1 & 3 */
+}
+
+.footer__brand {
+  grid-column: 1; /* Starts in column 2 and spans across columns 2 */
+  justify-self: start;
+}
+
+.footer-logo-link {
+  text-decoration: none;
+}
+
+.footer__logo {
+  color: #124559;
+  cursor: pointer;
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.footer__logo:hover {
+  color: #598392;
+}
+
+.footer__location {
+  align-items: center;
+  display: inline-flex;
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  gap: 8px;
+  grid-column: 3; /* Starts in column 3 and spans across columns 3 */
+  justify-self: end; /* pushes the copyright text to the right side of the column */
+  letter-spacing: 0.05rem;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.footer__icon {
+  filter: invert(47%) sepia(19%) saturate(684%) hue-rotate(149deg)
+    brightness(94%) contrast(85%);
+  display: inline-block;
+}
+
+.footer__copyright {
+  color: #598392;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  grid-column: 3; /* Starts in column 3 and spans across columns 3 */
+  justify-self: end; /* pushes the copyright text to the right side of the column */
+  letter-spacing: 0.02rem;
+  margin: 0;
+  text-transform: uppercase;
+}

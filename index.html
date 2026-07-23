@@ -341,46 +341,59 @@
       <!--CONTACT SECTION-->
 
       <section class="contact-section" id="contact">
-        <div class="section__header">
-          <p class="section-chapter">03 - CONTACT</p>
-          <h2 class="section-title">Let's make something worth keeping.</h2>
-          <p class="section-subtitle">
-            Got a project in mind? Drop a message or reach out directly.
-            Response within two working days.
-          </p>
+        <div class="contact__container">
+          <div class="contact__header">
+            <p class="contact-chapter">03 - CONTACT</p>
+            <h2 class="contact-title">Let's make something worth keeping.</h2>
+            <p class="contact-subtitle">
+              Got a project in mind? Drop a message or reach out directly.
+              Response within two working days.
+            </p>
+          </div>
+
+          <div class="contact__info">
+            <a href="mailto:hello@pslstudio.com" class="contact-email"
+              >hello@pslstudio.com</a
+            >
+          </div>
+
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="form-name" class="input__title">NAME</label>
+              <input
+                type="text"
+                id="form-name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="input__title">EMAIL</label>
+              <input
+                type="email"
+                id="form-email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="input__title">MESSAGE</label>
+              <textarea
+                id="form-message"
+                name="message"
+                placeholder="Tell us about your project..."
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
         </div>
-
-        <div class="contact__info">
-          <div class="contact-email">hello@pslstudio.co</div>
-        </div>
-
-        <form class="contact-form" id="contact-form">
-          <div class="form-group">
-            <label for="form-name" class="input__title">NAME</label>
-            <input type="text" name="name" placeholder="Your name" required />
-          </div>
-
-          <div class="form-group">
-            <label for="form-email" class="input__title">EMAIL</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label class="input__title">MESSAGE</label>
-            <textarea
-              name="message"
-              placeholder="Tell us about your project..."
-              rows="5"
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Send Message -</button>
-        </form>
       </section>
     </main>
 
@@ -442,7 +455,7 @@
         <div class="footer__bottom-row">
           <div class="footer__brand">
             <a href="#top" class="footer-logo-link">
-              <span class="footer__logo">PSL Studio</span>
+              <span class="footer__logo">PSL<br />Studio</span>
             </a>
           </div>
           <p class="footer__location">
