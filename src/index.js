@@ -38,3 +38,28 @@ projectButtons.forEach((button) => {
     }
   });
 });
+
+// SENT MSG OVERLAY POP UP//
+
+const contactForm = document.getElementById("contact-form");
+const sentMsgPopup = document.getElementById("sent-msg-popup");
+// listening for user clicking submit btn //
+contactForm.addEventListener("submit", (event) => {
+  // stops page from refreshing automatcially //
+  event.preventDefault();
+  // Reveals popup //
+  sentMsgPopup.classList.remove("hidden");
+  // Resert all text fields inside form //
+  contactForm.reset();
+  // timeout timer //
+  setTimeout(() => {
+    sentMsgPopup.classList.add("hidden");
+  }, 4000);
+});
+
+// if the user clicks anywhere on the background overlay it closes the modal//
+sentMsgPopup.addEventListener("click", (event) => {
+  if (event.target === sentMsgPopup) {
+    sentMsgPopup.classList.add("hidden");
+  }
+});
