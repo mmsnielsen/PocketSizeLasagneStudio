@@ -204,7 +204,7 @@ body {
   border: none;
   border-top: 1px solid rgba(1, 22, 30, 0.2);
   grid-column: 1 / span 2; /* forces line divider to span across the grid base */
-  margin-top: 60px;
+  margin-top: 120px;
 }
 
 .hero__footer {
@@ -297,10 +297,34 @@ body {
   list-style: none; /* removes native bullet points */
 }
 
+/* Updated: Added display flex here to handle alignment cleanly */
+.services-offer li {
+  display: flex;
+  align-items: center;
+}
+
 .services-offer li::before {
   color: #598392;
   content: "-";
   margin-right: 12px;
+}
+
+/* Hide the details by default */
+.services-offer .service-tool {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-5px); /* Adds a subtle sliding entry animation */
+  transition:
+    opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0.6s;
+}
+
+/* Reveal the details when hovering over the list item */
+.services-offer li:hover .service-tool {
+  opacity: 0.6;
+  visibility: visible;
+  transform: translateX(0);
 }
 
 /* PROJECTS SECTION */
@@ -363,7 +387,7 @@ body {
 }
 
 .projects-item:last-child {
-  border-bottom: 1px solid rgba(18, 69, 89, 0.15);
+  border-bottom: none;
 }
 
 .projects-trigger-btn {
@@ -844,7 +868,8 @@ body {
 
 .footer {
   background-color: #e6edda;
-  padding: 120px 10% 64px 10%;
+  padding: 80px 10% 64px 10%;
+  border-top: 1px solid rgba(1, 22, 30, 0.08);
 }
 
 .footer__container {
@@ -1047,4 +1072,254 @@ body {
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
+}
+
+/* DEVICES LAYOUT */
+
+@media screen and (max-width: 768px) {
+  .header,
+  .hero,
+  .about-section,
+  .projects-section,
+  .feedback-section,
+  .contact-section,
+  .footer {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 6%;
+  }
+
+  .header .logo,
+  .header .navigation {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nav-list {
+    gap: 20px; /* tighter nav link spacing */
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr; /* flattens left and right columns into a vertical stack*/
+    row-gap: 40px;
+  }
+
+  .hero__text {
+    grid-column: 1;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .hero__title {
+    font-size: 56px;
+  }
+
+  .about__container {
+    grid-template-columns: 1fr; /* drops 3 columns down into a single row */
+    row-gap: 24px;
+  }
+
+  .section-title {
+    grid-column: 1;
+    font-size: 32px;
+  }
+
+  .about__description-left,
+  .about__right-column {
+    grid-column: 1;
+  }
+
+  .services-divider {
+    margin: 32px 0 24px 0;
+  }
+
+  .projects__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    /*grid-template-columns: 1fr;*/
+    margin-bottom: 48px;
+  }
+
+  .projects-chapter {
+    font-size: 11px;
+    letter-spacing: 0.15rem;
+    margin-bottom: 4px;
+  }
+
+  .projects-title {
+    font-size: 36px;
+    line-height: 1.2;
+    margin: 0;
+    /*grid-column: 1;*/
+  }
+
+  .projects-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 100%;
+    margin: 0;
+    margin-top: 8px;
+  }
+
+  /* collapses table headers vertically into modern block layouts*/
+  .projects-trigger-btn {
+    grid-template-columns: 0.2fr 1fr; /*number and title stack row left, rest shifts lower */
+    row-gap: 8px;
+    padding: 24px 0;
+  }
+
+  .projects-category {
+    grid-column: 2; /* drops underneath project name neatly */
+    font-size: 13px;
+  }
+
+  .projects-meta-right {
+    grid-column: 2; /*drops underneath category string info line tracks */
+  }
+
+  /* re-align drawer inner wrapper on phone viewports */
+  .content-inner {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    padding-top: 16px;
+  }
+
+  .projects__image,
+  .projects-details-box {
+    grid-column: 1;
+  }
+
+  .projects-description {
+    max-width: 100%;
+  }
+
+  .status__container {
+    grid-template-columns: 1fr;
+    margin: 64px 0 96px 0;
+  }
+
+  .status {
+    grid-column: 1;
+    flex-direction: column; /* stacks text info statements above contact links btn */
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .feedback__header {
+    grid-template-columns: 1fr;
+    padding-bottom: 24px;
+  }
+
+  .feedback-item {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    padding: 40px 0;
+  }
+
+  .feedback-client-comment {
+    grid-column: 1;
+    font-size: 18px;
+  }
+
+  .feedback-client__meta {
+    grid-column: 1;
+    align-self: flex-start; /* resets right baseline lock to a neat left-side stack */
+  }
+
+  .contact__container {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .contact__header {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-title {
+    grid-column: 1;
+    font-size: 36px;
+  }
+
+  .contact-subtitle {
+    grid-column: 1;
+    margin-bottom: 16px;
+  }
+
+  .contact__info,
+  .contact-form {
+    grid-column: 1;
+    width: 1000%;
+  }
+
+  .contact-form {
+    grid-column: 1;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid rgba(18, 69, 89, 0.15);
+    padding-bottom: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 4px 0;
+    font-size: 16px;
+    width: 100%; /*forces the width calculation to stay inside the form-group container */
+    box-sizing: border-box;
+  }
+
+  .contact-email {
+    font-size: 22px; /*shrinks address link scale slightly to prevent word overlapping */
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .footer__top-row {
+    flex-direction: column; /* stacks text links nav above social media SVG blocks */
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .footer__nav {
+    flex-direction: column; /* vertical link stacks on small viewpoints */
+    gap: 16px;
+  }
+
+  .footer__bottom-row {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    align-items: flex-start;
+  }
+
+  .footer__brand,
+  .footer__location,
+  .footer__copyright {
+    grid-column: 1;
+    justify-self: start; /* locks all legal info tidy to the left alignment wall */
+  }
 }

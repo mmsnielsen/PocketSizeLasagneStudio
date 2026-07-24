@@ -74,22 +74,31 @@
           <p class="about__description-left">
             We're a one-person studio (with occasional collaborators) focused on
             web design and front-end development for independent businesses,
-            makers, and small brands. Work is done slowly, carefully, and with a
-            lot of attention to the quiet details.
+            makers, and small brands. Work is done intentionally, carefully, and
+            with deep attention to the quiet details.
           </p>
           <div class="about__right-column">
             <p class="about__description-right">
               No templates. No bloat. Each project starts from the thing itself
-              — what it is, who it's for, and what it needs to say. Then we
-              build exactly that.
+              — what it is, who it's for, and what it needs to say. Then, we
+              build a calm, user friendly, personalized digital space tailored
+              exactly to you.
             </p>
             <hr class="services-divider" />
             <div class="about__list">
               <p class="services-description">Services</p>
               <ul class="services-offer">
-                <li>Web design</li>
-                <li>Front-end development</li>
                 <li>Brand Identity</li>
+                <li class="service-item">
+                  <span class="service-name">Web design</span
+                  ><span class="service-tool">&nbsp;- Figma</span>
+                </li>
+                <li class="service-item">
+                  <span class="service-name">Web development</span
+                  ><span class="service-tool"
+                    >&nbsp;- HTML &bull; CSS &bull; JS</span
+                  >
+                </li>
                 <li>Managed web services</li>
               </ul>
             </div>
@@ -115,29 +124,33 @@
                 aria-controls="content-01"
               >
                 <span class="projects-number">01</span>
-                <h3 class="projects-name">Stockel Ceramics</h3>
-                <span class="projects-category">Brand identity & web </span>
+                <h3 class="projects-name">EmpowerMe</h3>
+                <span class="projects-category">Design & Development </span>
                 <div class="projects-meta-right">
-                  <span class="projects-year">2024</span>
+                  <span class="projects-year">2026</span>
                   <span class="projects-icon">+</span>
                 </div>
               </button>
               <div class="projects-content" id="content-01" aria-hidden="true">
                 <div class="content-inner">
                   <img
-                    src="images/stockel-ceramics-studio.jpg"
+                    src="images/EmpowerMe-Profile.jpg"
                     class="projects__image"
                     alt="ceramics studio"
                   />
                   <div class="projects-details-box">
                     <p class="projects-description">
-                      A complete digital presence for a Kraainem-based ceramics
-                      studio. Identity system, gallery, and online shop
+                      A practicing nutritionist seeking to replace a self-built
+                      template site with a tailored digital space. We designed a
+                      calm, user-friendly interface that reflects their unique
+                      approach to wellness, and took over the technical
+                      management of the platform-leaving them fully empowered to
+                      focus on supporting their clients.
                     </p>
                     <div class="tags">
-                      <span class="tag">Branding</span>
                       <span class="tag">Web design</span>
-                      <span class="tag">E-commerce</span>
+                      <span class="tag">Web development</span>
+                      <span class="tag">Site management</span>
                     </div>
                   </div>
                 </div>
@@ -161,7 +174,7 @@
               <div class="projects-content" id="content-02" aria-hidden="true">
                 <div class="content-inner">
                   <img
-                    src="images/nutritionist-website.png"
+                    src="images/"
                     class="projects__image"
                     alt="Nutritionist website"
                   />
@@ -218,25 +231,26 @@
                 <h3 class="projects-name">Stockel Ceramics</h3>
                 <span class="projects-category">Brand identity & web </span>
                 <div class="projects-meta-right">
-                  <span class="projects-year">2024</span>
+                  <span class="projects-year">2026</span>
                   <span class="projects-icon">+</span>
                 </div>
               </button>
               <div class="projects-content" id="personal-01" aria-hidden="true">
                 <div class="content-inner">
                   <img
-                    src="images/stockel-ceramics-studio.jpg"
+                    src="images/Stockel-Ceramics-Profile.jpg"
                     class="projects__image"
                     alt="ceramics studio"
                   />
                   <div class="projects-details-box">
-                    <p class="projects-description-box">
+                    <p class="projects-description">
                       A complete digital presence for a Kraainem-based ceramics
-                      studio. Identity system, glalry, and online shop
+                      studio. Identity, booking system, gallery, and online
+                      shop.
                     </p>
                     <div class="tags">
                       <span>Branding</span>
-                      <span>Web design</span>
+                      <span>Web design/development</span>
                       <span>E-commerce</span>
                     </div>
                   </div>
@@ -347,7 +361,6 @@
             <h2 class="contact-title">Let's make something worth keeping.</h2>
             <p class="contact-subtitle">
               Got a project in mind? Drop a message or reach out directly.
-              Response within two working days.
             </p>
           </div>
 
@@ -357,7 +370,13 @@
             >
           </div>
 
-          <form class="contact-form" id="contact-form">
+          <form
+            class="contact-form"
+            id="contact-form"
+            name="portfolio-contact"
+            data-netlify="true"
+            method="POST"
+          >
             <div class="form-group">
               <label for="form-name" class="input__title">NAME</label>
               <input
@@ -412,12 +431,12 @@
             <a
               href="#"
               target="_blank"
-              aria-label="Instagram"
+              aria-label="Linkedin"
               class="social-icons"
             >
               <img
-                src="images/instagram-logo.svg"
-                alt="IG logo"
+                src="images/linkedin-icon.svg"
+                alt="Linkedin logo"
                 width="20"
                 class="social-logo-svg"
               />
@@ -435,14 +454,10 @@
                 class="github-logo-svg"
               />
             </a>
-            <a
-              href="index.html#contact"
-              aria-label="Contact email logo"
-              class="social-icons"
-            >
+            <a href="#" aria-label="Figma logo" class="social-icons">
               <img
-                src="images/email-logo.svg"
-                alt="Email logo"
+                src="images/figma-icon.svg"
+                alt="Figma logo"
                 width="20"
                 class="social-logo-svg"
               />
