@@ -980,3 +980,71 @@ body {
   margin: 0;
   text-transform: uppercase;
 }
+
+/* SENT MSG POP UP LAYOVER */
+
+.sent-msg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(1, 22, 30, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 10000; /* floats above the sticky header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* handles fade mechanics */
+  pointer-events: auto;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.sent-msg-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* stops users from accidentally clicking things */
+} /* when JS removes this class, the modal gracefully glides open */
+
+.sent-msg-card {
+  background-color: #eff6e0;
+  border: 1px solid rgba(18, 69, 89, 0.2);
+  padding: 48px;
+  max-width: 440px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 24px 48px rgba(1, 22, 30, 0.08); /* soft, subtile editorial ambient drop shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.sent-msg__header {
+  color: #01161e;
+  font-family: "fraunces", serif;
+  font-size: 28px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+}
+
+.sent-msg__image {
+  height: 32px;
+  width: auto;
+  filter: invert(18%) sepia(34%) saturate(986%) hue-rotate(154deg)
+    brightness(92%) contrast(98%);
+}
+
+.sent-msg-card p {
+  color: #598392;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
