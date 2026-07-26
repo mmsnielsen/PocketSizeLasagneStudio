@@ -61,7 +61,7 @@ contactForm.addEventListener("submit", (event) => {
   const json = JSON.stringify(object);
 
   // 2. FIXED: Linked directly to the full validated API server submission routing line //
-  fetch("https://staticforms.dev", {
+  fetch("https://api.staticforms.dev/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: json,
