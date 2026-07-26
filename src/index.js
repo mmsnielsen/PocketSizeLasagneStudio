@@ -47,14 +47,31 @@ const sentMsgPopup = document.getElementById("sent-msg-popup");
 contactForm.addEventListener("submit", (event) => {
   // stops page from refreshing automatcially //
   event.preventDefault();
-  // Reveals popup //
-  sentMsgPopup.classList.remove("hidden");
-  // Resert all text fields inside form //
-  contactForm.reset();
-  // timeout timer //
-  setTimeout(() => {
-    sentMsgPopup.classList.add("hidden");
-  }, 4000);
+
+  // 1. Gather all the data typed into the form input boxes
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+
+  // 2. Secretly send the text data to Netlify's processing server in the background
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => {
+      // Reveals popup //
+      sentMsgPopup.classList.remove("hidden");
+      // Resert all text fields inside form //
+      contactForm.reset();
+      // timeout timer //
+      setTimeout(() => {
+        sentMsgPopup.classList.add("hidden");
+      }, 4000);
+    })
+    .catch((error) => {
+      // Safety check: logs an alert in your inspect window if your network drops
+      console.error("Netlify Submission Error:", error);
+    });
 });
 
 // if the user clicks anywhere on the background overlay it closes the modal//
