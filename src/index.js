@@ -48,17 +48,17 @@ contactForm.addEventListener("submit", (event) => {
   // stops page from refreshing automatcially //
   event.preventDefault();
 
-  // 1. Gather all the data typed into the form input boxes
+  // 1. Gather all the data typed into the form input boxes//
   const myForm = event.target;
   const formData = new FormData(myForm);
 
-  // Convert our input fields into a clean JSON data object format
+  // Convert our input fields into a clean JSON data object format//
   const object = {};
   formData.forEach((value, key) => (object[key] = value));
   const json = JSON.stringify(object);
 
-  // 2. Secretly send the text data to Netlify's processing server in the background
-  fetch("https://staticforms.xyz", {
+  // 2. Secretly send the text data to Netlify's processing server in the background//
+  fetch("https://staticforms.dev", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: json,
@@ -79,8 +79,8 @@ contactForm.addEventListener("submit", (event) => {
       }
     })
     .catch((error) => {
-      // Safety check: logs an alert in your inspect window if your network drops
-      console.error("Netlify Submission Error:", error);
+      // Safety check: logs an alert in your inspect window if your network drops//
+      console.error("Static Forms Submission Error:", error);
     });
 });
 
