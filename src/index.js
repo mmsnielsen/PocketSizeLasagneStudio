@@ -52,21 +52,31 @@ contactForm.addEventListener("submit", (event) => {
   const myForm = event.target;
   const formData = new FormData(myForm);
 
+  // Convert our input fields into a clean JSON data object format
+  const object = {};
+  formData.forEach((value, key) => (object[key] = value));
+  const json = JSON.stringify(object);
+
   // 2. Secretly send the text data to Netlify's processing server in the background
-  fetch("/", {
+  fetch("https://staticforms.xyz", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
+    headers: { "Content-Type": "application/json" },
+    body: json,
   })
-    .then(() => {
-      // Reveals popup //
-      sentMsgPopup.classList.remove("hidden");
-      // Resert all text fields inside form //
-      contactForm.reset();
-      // timeout timer //
-      setTimeout(() => {
-        sentMsgPopup.classList.add("hidden");
-      }, 4000);
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        // Reveals popup //
+        sentMsgPopup.classList.remove("hidden");
+        // Resert all text fields inside form //
+        contactForm.reset();
+        // timeout timer //
+        setTimeout(() => {
+          sentMsgPopup.classList.add("hidden");
+        }, 4000);
+      } else {
+        console.error("Form Processing Error:", data.message);
+      }
     })
     .catch((error) => {
       // Safety check: logs an alert in your inspect window if your network drops
