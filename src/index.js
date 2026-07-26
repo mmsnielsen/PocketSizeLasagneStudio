@@ -60,7 +60,7 @@ contactForm.addEventListener("submit", (event) => {
   formData.forEach((value, key) => (object[key] = value));
   const json = JSON.stringify(object);
 
-  // 2. FIXED: Linked directly to the full validated API server submission routing line
+  // 2. FIXED: Linked directly to the full validated API server submission routing line //
   fetch("https://staticforms.dev", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
