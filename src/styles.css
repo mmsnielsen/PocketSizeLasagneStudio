@@ -472,6 +472,23 @@ body {
   align-items: start;
 }
 
+/* Keeps the link container behaving flawlessly inside your layout grid matrix */
+.project-image-link {
+  grid-column: 2; /* Locks the link box safely inside Column 2 */
+  display: block;
+  width: 100%;
+  text-decoration: none; /* Stops the browser from drawing accidental blue lines */
+  overflow: hidden;
+}
+
+/* Optional high-end micro-interaction effect */
+.project-image-link:hover .projects__image {
+  transform: scale(
+    1.02
+  ); /* Tiny premium zoom effect when hovering over the image card */
+  transition: transform 0.4s ease-in-out;
+}
+
 .projects__image {
   display: block;
   grid-column: 2;
@@ -1193,6 +1210,23 @@ body {
     grid-template-columns: 1fr;
     row-gap: 24px;
     padding-top: 16px;
+  }
+
+  /* Keeps the link container behaving flawlessly inside your layout grid matrix */
+  .project-image-link {
+    grid-column: 1; /* Locks the link box safely inside Column 2 */
+    display: block;
+    width: 100%;
+    text-decoration: none; /* Stops the browser from drawing accidental blue lines */
+    overflow: hidden;
+  }
+
+  /* Optional high-end micro-interaction effect */
+  .project-image-link:hover .projects__image {
+    transform: scale(
+      1.02
+    ); /* Tiny premium zoom effect when hovering over the image card */
+    transition: transform 0.4s ease-in-out;
   }
 
   .projects__image,
