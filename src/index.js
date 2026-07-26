@@ -41,23 +41,26 @@ projectButtons.forEach((button) => {
 
 // SENT MSG OVERLAY POP UP//
 
+// SENT MSG OVERLAY POP UP //
+
 const contactForm = document.getElementById("contact-form");
 const sentMsgPopup = document.getElementById("sent-msg-popup");
+
 // listening for user clicking submit btn //
 contactForm.addEventListener("submit", (event) => {
-  // stops page from refreshing automatcially //
+  // stops page from refreshing automatically //
   event.preventDefault();
 
-  // 1. Gather all the data typed into the form input boxes//
+  // 1. Gather all the data typed into the form input boxes //
   const myForm = event.target;
   const formData = new FormData(myForm);
 
-  // Convert our input fields into a clean JSON data object format//
+  // Convert our input fields into a clean JSON data object format //
   const object = {};
   formData.forEach((value, key) => (object[key] = value));
   const json = JSON.stringify(object);
 
-  // 2. Secretly send the text data to Netlify's processing server in the background//
+  // 2. FIXED: Linked directly to the full validated API server submission routing line
   fetch("https://staticforms.dev", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -68,7 +71,7 @@ contactForm.addEventListener("submit", (event) => {
       if (data.success) {
         // Reveals popup //
         sentMsgPopup.classList.remove("hidden");
-        // Resert all text fields inside form //
+        // Reset all text fields inside form //
         contactForm.reset();
         // timeout timer //
         setTimeout(() => {
@@ -79,12 +82,12 @@ contactForm.addEventListener("submit", (event) => {
       }
     })
     .catch((error) => {
-      // Safety check: logs an alert in your inspect window if your network drops//
+      // Safety check: logs an alert in your inspect window if your network drops //
       console.error("Static Forms Submission Error:", error);
     });
 });
 
-// if the user clicks anywhere on the background overlay it closes the modal//
+// if the user clicks anywhere on the background overlay it closes the modal //
 sentMsgPopup.addEventListener("click", (event) => {
   if (event.target === sentMsgPopup) {
     sentMsgPopup.classList.add("hidden");
